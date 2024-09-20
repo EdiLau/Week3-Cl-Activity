@@ -1,0 +1,23 @@
+name: ci practice
+
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+    workflow_dispatch:
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: running the npm install 
+        run: npm install
+      - name: running the build
+        run: npm run build 
+      - name: running the npm test
+        run: npm run test 
